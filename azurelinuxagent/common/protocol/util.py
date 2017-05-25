@@ -98,17 +98,19 @@ class ProtocolUtil(object):
             if os.path.isfile(tag_file_path_on_dvd):
                 logger.info("Found {0} in provisioning ISO", TAG_FILE_NAME)
                 shutil.copyfile(tag_file_path_on_dvd, tag_file_path)
+            else:
+                logger.info("{0} NOT FOUND in provisioning ISO", TAG_FILE_NAME)
         except IOError as e:
             raise ProtocolError("[CopyOvfEnv] Error copying file "
                                 "{0} to {1}: {2}".format(tag_file_path,
                                                          tag_file_path,
                                                          ustr(e)))
 
-        try:
-            self.osutil.umount_dvd()
-            self.osutil.eject_dvd()
-        except OSUtilError as e:
-            logger.warn(ustr(e))
+        #try:
+        #    self.osutil.umount_dvd()
+        #    self.osutil.eject_dvd()
+        #except OSUtilError as e:
+        #    logger.warn(ustr(e))
 
         return ovfenv
 
