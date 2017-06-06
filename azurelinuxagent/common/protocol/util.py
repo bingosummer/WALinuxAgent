@@ -35,7 +35,7 @@ from azurelinuxagent.common.protocol.metadata import MetadataProtocol, \
                                                      METADATA_ENDPOINT
 
 OVF_FILE_NAME = "ovf-env.xml"
-TAG_FILE_NAME = "useMetadataEndpoint.tag"
+TAG_FILE_NAME = "usemetadataendpoint.tag"
 PROTOCOL_FILE_NAME = "Protocol"
 MAX_RETRY = 360
 PROBE_INTERVAL = 10
